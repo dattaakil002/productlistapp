@@ -1,0 +1,40 @@
+<!-- <p>{{producttitle.title}}</p>
+<div>
+    <img src="{{product.image}}">
+    <p>{{product.title}}</p>
+    <p>{{product.description}}</p>
+    <p>{{product.price}}</p>
+    <p>{{product.rating}}</p>
+    <p>{{product.location}}</p>
+    <input name="title" >
+</div> -->
+<!-- <form #f (ngSubmit)="Update(f)">
+    <img src="{{product.image}}">
+    <input type="text" [(ngModel)] = "product.title" >
+    <input type="text" [(ngModel)] = "product.description" >
+    <input type="text" [(ngModel)] = "product.price" >
+    <input type="text" [(ngModel)] = "product.rating" >
+    <input type="text" [(ngModel)] = "product.location" >
+</form>
+<button (click)="updateproduct()">Update</button> -->
+
+<img src="{{product.image}}">
+<form [formGroup]="productform" (ngSubmit)="Update()">
+    <label>Title</label>
+    <input type="text" formControlName="title"/>
+   
+    <label>Description</label>
+    <input type="text" formControlName="description"/>
+   
+    <label>Price</label>
+    <input type="text" formControlName="price"/>
+   
+    <label>Rating</label>
+    <input type="text" formControlName="rating"/>
+   
+    <label>Location</label>
+    <input type="text" formControlName="location"/>
+   
+    <button class="btn btn-primary">Update</button>
+</form>
+<button class="btn btn-primary" (click) = "Movetotrash()">Remove</button>

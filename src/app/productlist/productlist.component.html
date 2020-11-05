@@ -1,0 +1,24 @@
+
+<a (click)="homepage()">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a (click)="trashpage()">TRASH</a>
+<div *ngIf="home">
+    <ng-container *ngFor="let product of productlist">
+    <a (click)="indivproduct(product)">
+        <p>{{product.title}}</p>
+        <img src="{{product.image}}">
+        <p>{{product.description}}</p>
+    </a>
+    </ng-container>
+</div>
+
+<div *ngIf="trash">
+    <ng-container *ngFor="let product of productstrash">
+    <a>
+        <p>{{product.title}}</p>
+        <img src="{{product.image}}">
+        <p>{{product.description}}</p>
+    </a>
+    <button (click)="restore(product)">Restore</button>
+    <button (click)="remove(product)">Remove</button>
+    </ng-container>
+</div>
